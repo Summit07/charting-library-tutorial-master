@@ -1,0 +1,5 @@
+[submodule "charting_library_cloned_data"]
+	path = charting_library_cloned_data
+	url = git@github.com:tradingview/charting_library.git
+
+	#ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
