@@ -82,7 +82,7 @@ const configurationDatas = {
 		{
 			value: 'BigBank',
 			name: 'BigBank',
-			desc: 'BigBank',
+			desc: 'BigBank Exchange',
 		},
 	],
 	// The `symbols_types` arguments are used for the `searchSymbols` method if a user selects this symbol type
@@ -139,11 +139,6 @@ async function getMyAllSymbols() {
 	let allSymbols = [];
 	// console.log(data)
 
-	// for (const exchange of configurationData.exchanges) {
-	// 	const pairs = data.Data[exchange.value].pairs;
-	// }
-	// for (const leftPairPart of Object.keys(pairs)) {
-	// }
 	const symbols = data.map((coin) => {
 		const symbol = generateSymbol(configurationDatas.exchanges[0].value, coin.targetsybl, coin.basesybl);
 		// console.log(symbol)
@@ -235,6 +230,7 @@ const getBars = async (symbolInfo, resolution, periodParams, onHistoryCallback, 
 	let from = "1672556376000";
 	let to = "1688194776000";
 	let firstDataRequest = "1672556376000";
+
 	console.log('[getBars]: Method call', symbolInfo, resolution, from, to);
 	// const parsedSymbol = parseFullSymbol(symbolInfo.full_name);
 	const parsedSymbol = parseFullSymbol("BigBank:BTC/USDT");
@@ -264,7 +260,6 @@ const getBars = async (symbolInfo, resolution, periodParams, onHistoryCallback, 
 			onHistoryCallback([], {
 				noData: true,
 			});
-
 			return;
 		}
 		let bars = [];
@@ -297,7 +292,7 @@ const getBars = async (symbolInfo, resolution, periodParams, onHistoryCallback, 
 	}
 }
 
-getBars(symbolInfo, "resolution", "periodParams", () => "noneHis", () => "Error")
+// getBars(symbolInfo, "resolution", "periodParams", () => "noneHis", () => "Error")
 
 const subscribeBars = async (symbolInfo, resolution, onRealtimeCallback, subscriberUID, onResetCacheNeededCallback,) => {
 
